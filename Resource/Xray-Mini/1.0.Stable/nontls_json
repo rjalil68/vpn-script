@@ -1,0 +1,49 @@
+{
+  "log": {
+    "access": "/etc/akubudakgerik/xray-mini-nontls/access.log",
+    "error": "/etc/akubudakgerik/xray-mini-nontls/error.log",
+    "loglevel": "info"
+  },
+  "inbounds": [
+    {
+      "port": 80,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "path": "/vmess"
+        }
+      }
+    },
+    {
+      "port": 80,
+      "protocol": "vless",
+      "settings": {
+        "clients": [],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "path": "/vless"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
+    }
+  ]
+}

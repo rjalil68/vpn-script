@@ -1,0 +1,21 @@
+Bahasa Indonesia
+------------------
+Peraturan Kami
+1. Di larang menjual ulang license yang telah di beli
+2. Di larang menggunakan license untuk jualan vps kecuali ada izin
+3. Di larang mengshare ke public license anda
+4. Di larang melakukan spam installasi paling banyak dalam 1 jam 10 installasi berjalan
+5. Di larang melakukan bugs trick dlm script. jika ketahuan license langsung di copot dan kena blacklist
+6. Di larang menjalakan backup feature secara berlebihan contoh dlm 1 jam 10 kali backup
+Jika ketahuan Melanggar kebijakan kami, maka kami berhak membekukan license bahkan mencabut / mematikan license anda tanpa pemberitahuan
+
+English Language
+------------------
+Our Rules
+1. Not allowed to resell the license that has been purchased
+2. Not allowed to use a license to sell vps unless there is permission
+3. Not allowed to share with your public your license key
+4. Not allowed to spa installations max in 1 hour 10 installations running
+5. Not allowed to do bug tricks in the script, if detected doing trick bug, your license will be immediately removed and blacklisted
+6. Not allowed to run the backup feature in excess example in 1 hour 10 times backup
+If caught violating our policies, we reserve the right to disable your license and even turn off your license without notice

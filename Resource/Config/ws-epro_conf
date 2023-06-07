@@ -1,0 +1,21 @@
+# WS-ePro Config By akubudakgerik
+# ============================================================
+# Please do not try to change / modif this config
+# This config is tag to xray if you modified this 
+# Xray will Error / Crash
+# ============================================================
+# (C) Copyright 2022-2023 By akubudakgerik
+
+# // Start Config
+verbose: 0
+listen:
+
+# // WebSocket NonTLS
+- target_host: 127.0.0.1
+  target_port: 22
+  listen_port: 2082
+
+# // WebSocket TLS
+- target_host: 127.0.0.1
+  target_port: 22
+  listen_port: 2083

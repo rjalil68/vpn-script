@@ -1,0 +1,16 @@
+[Unit]
+Description=SSLH Server
+Documentation=https://akubudakgerik.com
+After=syslog.target network-online.target
+
+[Service]
+User=root
+NoNewPrivileges=true
+ExecStart=/usr/sbin/sslh --foreground --user root --listen 0.0.0.0:8443 --tls 127.0.0.1:777 --ssh 127.0.0.1:22 --openvpn 127.0.0.1:1194 --http 127.0.0.1:2082
+Restart=on-failure
+RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
+
+[Install]
+WantedBy=multi-user.target

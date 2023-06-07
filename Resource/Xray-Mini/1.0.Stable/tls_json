@@ -1,0 +1,161 @@
+{
+  "log": {
+    "access": "/etc/akubudakgerik/xray-mini-tls/access.log",
+    "error": "/etc/akubudakgerik/xray-mini-tls/error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "trojan",
+      "settings": {
+        "clients": [],
+        "decryption": "none",
+        "fallbacks": [
+          {
+            "path": "/trojan",
+            "dest": 54801,
+            "xver": 1
+          },
+          {
+            "path": "/vmess",
+            "dest": 54802,
+            "xver": 1
+          },
+          {
+            "path": "/vless",
+            "dest": 54803,
+            "xver": 1
+          },
+          {
+            "alpn": "h2",
+            "dest": 56804,
+            "xver": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "xtls",
+        "xtlsSettings": {
+          "minVersion": "1.2",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ],
+          "certificates": []
+        }
+      }
+    },
+    {
+      "port": 54801,
+      "listen": "127.0.0.1",
+      "protocol": "trojan",
+      "settings": {
+        "clients": [],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "acceptProxyProtocol": true,
+          "path": "/trojan"
+        }
+      }
+    },
+    {
+      "port": 54802,
+      "listen": "127.0.0.1",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "acceptProxyProtocol": true,
+          "path": "/vmess"
+        }
+      }
+    },
+    {
+      "port": 54803,
+      "listen": "127.0.0.1",
+      "protocol": "vless",
+      "settings": {
+        "clients": [],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "acceptProxyProtocol": true,
+          "path": "/vless"
+        }
+      }
+    },
+    {
+      "port": 56801,
+      "listen": "127.0.0.1",
+      "protocol": "trojan",
+      "settings": {
+        "clients": [],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "acceptProxyProtocol": true,
+          "serviceName": "Trojan-GRPC"
+        }
+      }
+    },
+    {
+      "port": 56802,
+      "listen": "127.0.0.1",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "security": "none",
+        "grpcSettings": {
+          "acceptProxyProtocol": true,
+          "serviceName": "Vmess-GRPC"
+        }
+      }
+    },
+    {
+      "port": 56803,
+      "listen": "127.0.0.1",
+      "protocol": "vless",
+      "settings": {
+        "clients": [],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "acceptProxyProtocol": true,
+          "serviceName": "Vless-GRPC"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+      {
+          "protocol": "freedom",
+          "tag": "direct"
+      },
+      {
+          "protocol": "blackhole",
+          "tag": "block"
+      }
+  ]
+}

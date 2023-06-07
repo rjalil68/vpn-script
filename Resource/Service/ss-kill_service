@@ -1,0 +1,12 @@
+[Unit]
+Description=Shadowsocks Auto Kill Service
+Documentation=https://akubudakgerik.com
+After=syslog.target network-online.target
+
+[Service]
+User=root
+NoNewPrivileges=true
+ExecStart=/usr/local/akubudakgerik/ss-auto-kill
+
+[Install]
+WantedBy=multi-user.target

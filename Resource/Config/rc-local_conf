@@ -1,0 +1,11 @@
+#!/bin/sh -e
+# Rc-Local Config By akubudakgerik
+# ============================================================
+# Please do not try to change / modif this config
+# This config is used for manage vpn service
+# ============================================================
+# (C) Copyright 2022-2023 By akubudakgerik
+
+# // Starting SSR-Server
+systemctl start ssr-server > /dev/null 2>&1
+exit 0

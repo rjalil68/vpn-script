@@ -1,0 +1,27 @@
+{
+  "log": {
+    "access": "/etc/akubudakgerik/xray-mini-shadowsocks/access.log",
+    "error": "/etc/akubudakgerik/xray-mini-shadowsocks/error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+        "port": 8880,
+        "protocol": "shadowsocks",
+        "settings": {
+            "clients": [],
+          "network": "tcp,udp"
+       }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
+    }
+  ]
+}

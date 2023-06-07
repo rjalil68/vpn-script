@@ -1,0 +1,30 @@
+{
+    "inbounds": [
+        {
+            "port": 8652,
+            "protocol": "http",
+            "settings": {
+                "accounts": []
+                },
+                "streamSettings": {
+                  "network": "tcp",
+                  "security": "none",
+                  "tcpSettings": {
+                    "header": {
+                      "type": "none"
+                        }
+                    }
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ]
+}

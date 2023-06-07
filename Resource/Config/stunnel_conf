@@ -1,0 +1,26 @@
+# Stunnel4 Config By akubudakgerik
+# ============================================================
+# Please do not try to change / modif this config
+# This config is connection to sslh & proxy 
+# if you changes it maybe stunnel & openssh will error
+# ============================================================
+# (C) Copyright 2022-2023 By akubudakgerik
+
+# // Start Config
+cert = /etc/stunnel/stunnel.pem
+client = no
+socket = a:SO_REUSEADDR=1
+socket = l:TCP_NODELAY=1
+socket = r:TCP_NODELAY=1
+
+[openssh]
+accept = 777
+connect = 127.0.0.1:8443
+
+[dropbear]
+accept = 990
+connect = 127.0.0.1:110
+
+[openvpn-ssl]
+accept = 1196
+connect = 127.0.0.1:1194
